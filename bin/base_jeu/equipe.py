@@ -1,5 +1,5 @@
 # coding: utf8
-class rang:
+class equipe:
 	noms = 	["6","7","8","9","10","valet","dame","roi","as"]
 	points = [0,0,0,0,10,2,3,4,11]
 	ids = range(1,10)
