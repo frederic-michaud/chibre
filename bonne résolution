@@ -1,8 +1,0 @@
-les bonnes résolutions de Frédéric
-
-On ne doit passer que des objets aux constructeurs sauf s'il s'agit de propriétés qui ne sont pas des objets. 
-Tout est numéroté de 1 à N(carte, equipe, joueur, main, etc), sauf dans les tableaux python que l'on manipule directement
-
-Il faut ecrire les teste pour choisir carte possible choisir carte couleur et choisir meilleur carte ainsi que pour distribue la donne
-tester pour forces atout
-
