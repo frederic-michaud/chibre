@@ -16,7 +16,7 @@ class couleur:
 		elif Ide is not None:
 			if Ide in self.ids:
 				self.nom = self.ids_to_noms[Ide]
-				self.ide = Ide
+				self.ide = Ide 
 			else:
 				raise TypeError("la couleur avec un numero {numero} n'existe pas".format(numero =ide))
 		else:
