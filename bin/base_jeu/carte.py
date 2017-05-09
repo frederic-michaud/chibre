@@ -15,24 +15,25 @@ class carte:
 			self.__ide__()
 		else :
 			raise TypeError("cette carte n'est pas bien définie")
-			
-		
-	def better(self, autre,jeu):
-		pass
 	
 	
-	def valeur_force(self,jeu):
-		valeur = valeurs[self.rang.nom]
-		if self.couleur == jeu.atout:
+	def valeur_force(self,couleur_atout,couleur_plie):
+		"""fonction qui détermine la force d'une carte dans une plie étant donné la couleur de la plie et l'atout"""
+		valeur = self.rang.valeur_force()
+		if self.couleur != couleur_plie :
+			valeur = 0
+		if self.couleur == couleur_atout:
+			valeur = 9 + self.rang.valeur_force()
 			if self.rang.nom == "9":
-				valeur = 10
+				valeur = 19
 			elif self.rang.nom == "valet":
-				valeur = 11
+				valeur = 20
 		return valeur
 	
-	def valeur_point(self,jeu):
+	def valeur_point(self,partie):
+		"""fonction qui détermine le nombre de point que vaut une carte en sachant l'atout"""
 		valeur = self.rang.valeur_point()
-		if self.couleur == jeu.atout:
+		if self.couleur == partie.atout:
 			if self.rang.nom == "9":
 				valeur = 14
 			elif self.rang.nom == "valet":
@@ -44,6 +45,9 @@ class carte:
 
 	def __eq__(self, other):
 	    return self.rang  == other.rang and self.couleur == other.couleur
+	    
+	def __ne__(self, other):
+		return not(self.__eq__(other))
 
 	def __repr__(self):
 		return "{rang} de {couleur}".format(rang = self.rang.nom,couleur = self.couleur.nom)

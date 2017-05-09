@@ -23,8 +23,17 @@ class couleur:
 			raise TypeError("Cette couleur n'est pas bien définie")
 
 	def __eq__(self, other):
-		return (self.nom  == other.nom) 
+		if other == None:
+			return False
+		else:
+			return (self.nom  == other.nom) 
+		
+	def __ne__(self, other):
+		return not(self.__eq__(other))
 
 	
 	def __ide__(self):
 		self.ide = self.noms_to_ids[self.nom]
+		
+	def __repr__(self):
+		return self.nom
