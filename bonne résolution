@@ -1,0 +1,14 @@
+**les bonnes résolutions de Frédéric**
+
+On ne doit passer que des objets aux constructeurs et aux fonctions sauf s'il s'agit de propriétés qui ne sont pas des objets. 
+
+Tout est numéroté de 1 à N(carte, equipe, joueur, main, etc), sauf dans les tableaux python que l'on manipule directement à l'intérieur des fonctions. Tous les objets qui sont visible de l'extérieur sont numéroté de 1 à N. 
+
+
+**Todo liste**
+
+différencier les points de partie et les points de chaque donne
+
+Il faut ecrire les teste pour choisir carte possible choisir carte couleur et choisir meilleur carte ainsi que pour distribue la donne
+tester pour forces atout
+
