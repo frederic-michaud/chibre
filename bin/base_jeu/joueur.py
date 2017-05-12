@@ -10,9 +10,9 @@ class joueur:
 		self.hand = Hand
 		self.ide = Ide
 	
-	def joue(self,partie,cartes_jouees):
+	def joue(self,donne,cartes_jouees):
 		"""fonction qui définit comment on joue une carte"""
-		ma_carte = self.hand.joue(partie,cartes_jouees)
+		ma_carte = self.hand.joue(donne,cartes_jouees)
 		return ma_carte
 
 	def decide_atout(self):
@@ -21,6 +21,9 @@ class joueur:
 		forces = [self.hand.evalue_atout(c) for c in couleurs]
 		index_couleur = forces.index(max(forces))
 		return couleurs[index_couleur]		
+		
+	def get_carte(self,i):
+		return self.hand.cartes[i-1]
 		
 	def __repr__(self):
 		return "joueur N°"+str(self.ide)

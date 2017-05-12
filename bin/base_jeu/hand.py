@@ -14,7 +14,7 @@ class hand:
 
 	def __repr__(self):
 		if len(self.cartes)>0:
-			return "\n".join([carte.__repr__() for carte in self.cartes])
+			return "main: "+" ".join(["(" + str(key+1) +"," + carte.__repr__()+")" for key, carte in enumerate(self.cartes)])
 		else:
 			return "Il n'y a pas de carte dans ce jeu"
 	
@@ -70,4 +70,7 @@ class hand:
 		"""fonction qui associe une force à chaque couleur d'atout"""
 		cartes = self.get_cartes_couleur(couleur)
 		return sum([carte.rang.valeur_atout() for carte in cartes])
+		
+	def get_position(self,carte):
+		return 1 + self.cartes.index(carte)
 			
